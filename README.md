@@ -26,7 +26,7 @@ maze.cell
 ```
 This file describes the size of the cell at the beginning of the file.
 ```
-CELL 4x4;
+CELL 4x4
 ```
 The rest of the file will enumerate the cells and then list that cells viable connections on orthogonal sides.
 The blocks describing the cells containt:
