@@ -1,5 +1,4 @@
 #!/bin/python3
-from calendar import c
 import sys
 
 def main():
