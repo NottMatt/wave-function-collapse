@@ -1,4 +1,5 @@
 #!/bin/python3
+from calendar import c
 import sys
 
 def main():
@@ -16,7 +17,8 @@ def main():
         print('')
 
     # parse cells from file
-    cell_dimensions,cell_structures,cell_connections = parse_cells(grid_x, grid_y, cell_file)
+    # cell_dimensions,cell_structures,cell_connections = parse_cells(grid_x, grid_y, cell_file)
+    parse_cells(grid_x, grid_y, cell_file)
     # generate cell_grid (input x by input y)
 
     # populate grid with cell identifiers based on entropy calculations
@@ -30,6 +32,17 @@ def parse_cells(x, y, cfile):
     f = open(cfile, 'r')
     
     # get cell dimensions
+    f_content = f.read()
+    cell_dimensions = f_content.split("{")[0].split("\n")[0].split(" ")[1].split("x")
+
+    cell_x = int(cell_dimensions[0])
+    cell_y = int(cell_dimensions[1])
+
+    for i in range(y * cell_y):
+        for j in range(x * cell_x):
+            print("[]", end='')
+        print('')
+    
 
     # create dictionary cell_structures
         # identifier:
